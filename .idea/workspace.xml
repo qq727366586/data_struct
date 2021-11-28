@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9eb9cef3-476f-4da8-b56f-64e8a40da0ae" name="Default Changelist" comment="" />
+    <list default="true" id="9eb9cef3-476f-4da8-b56f-64e8a40da0ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/数组/1.练习/2.无限极分类/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数组/二分查找-衍生-查出大于等于某个数最左侧的值下标/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数组/二分查找/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/冒泡排序/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/插入排序/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/选择排序-衍生/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/选择排序/main.go" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +24,11 @@
     </option>
   </component>
   <component name="GOROOT" url="file://D:/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1xUgCsMnainoSEPfxJWrtdlhiZu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,7 +50,16 @@
       <recent name="E:\go\src\data_struct\utils" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build data_struct/数组/找出数组最大值">
+    <configuration name="go build data_struct/数组/找出数组最大值" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="data_struct" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/数组/找出数组最大值/main.go" />
+      <package value="data_struct/数组/找出数组最大值" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build data_struct/list" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="data_struct" />
       <working_directory value="$PROJECT_DIR$" />
@@ -49,6 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build data_struct/数组/找出数组最大值" />
         <item itemvalue="Go Build.go build data_struct/list" />
       </list>
     </recent_temporary>
