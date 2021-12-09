@@ -10,7 +10,6 @@ func index(arr []uint) {
 	if len(arr) <= 1 {
 		return
 	}
-
 	for i := 0; i < len(arr); i++ {
 		minIndex := i
 		for j := i + 1; j < len(arr); j++ {

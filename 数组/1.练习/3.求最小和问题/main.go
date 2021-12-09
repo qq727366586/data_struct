@@ -22,11 +22,11 @@ func merge(arr []int, l, m, r int) int {
 			res += arr[t1] * (r - t2 + 1)
 			temp[i] = arr[t1]
 			i++
-			t2++
+			t1++
 		} else {
 			temp[i] = arr[t2]
 			i++
-			t1++
+			t2++
 		}
 	}
 	for t1 <= m {
@@ -49,6 +49,5 @@ func merge(arr []int, l, m, r int) int {
 func main() {
 	var arr = []int{1,3,4,66,5,2,11}
 	out := process(arr, 0, len(arr) - 1)
-	fmt.Println(arr)
 	fmt.Println(out)
 }

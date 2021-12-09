@@ -20,9 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eb9cef3-476f-4da8-b56f-64e8a40da0ae" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/数组/1.练习/3.求最小和问题/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/数组/1.练习/2.无限极分类/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/数组/1.练习/2.无限极分类/main.go" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数组/选择排序/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/数组/选择排序/main.go" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/数组/归并排序/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 1dd71e9b8eaa12cd887ad466b632a2908ae44f65
+>>>>>>> f866370372d2ef5d32e4cf2b2623b8788cfd265b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
