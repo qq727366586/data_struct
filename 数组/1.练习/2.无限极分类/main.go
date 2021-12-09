@@ -9,11 +9,12 @@ import "fmt"
 //思路,先把顶级找出,在找子
 
 type Menu struct {
-	Id int
-	Pid int
-	Name string
+	Id       int
+	Pid      int
+	Name     string
 	Children []Menu
 }
+
 
 func GetMenu(menu []Menu, pid int) []Menu {
 	var out []Menu
@@ -21,8 +22,8 @@ func GetMenu(menu []Menu, pid int) []Menu {
 		if v.Pid == pid {
 			child := GetMenu(menu, v.Id)
 			node := Menu{
-				Id: v.Id,
-				Pid: v.Pid,
+				Id:   v.Id,
+				Pid:  v.Pid,
 				Name: v.Name,
 			}
 			node.Children = child
@@ -32,7 +33,7 @@ func GetMenu(menu []Menu, pid int) []Menu {
 	return out
 }
 
-func main()  {
+func main() {
 	menu := []Menu{
 		{Id: 1, Pid: 2, Name: "可爱"},
 		{Id: 2, Pid: 0, Name: "形容词"}, // 1
