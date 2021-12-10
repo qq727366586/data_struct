@@ -35,14 +35,25 @@ func GetMenu(menu []Menu, pid int) []Menu {
 	return out
 }
 
-//查询自己 和其子节点 所有id  一般用于删除
-func FindTreeChildNode(arr []Menu, id int, temp []int) []int {
+//查询某个节点下子节点所有id 一般用于删除
+func FindChildNode(arr []Menu, id int, temp []int) []int {
 	for _, v := range arr {
 		if v.Pid == id {
 			temp = append(temp, v.Id)
 			temp = FindTreeChildNode(arr, v.Id, temp)
-		} else if v.Id == id && v.Pid == 0 {
+		}
+	}
+	return temp
+}
+
+//根据无限极分类 某个节点 查找出  自己 + 所有子节点
+func FindTreeChildNode(arr []Menu, id int, temp []int) []int {
+	for _, v := range arr {
+		if v.Id == id || v.Pid == id  {
 			temp = append(temp, v.Id)
+			temp = FindTreeChildNode(v.Children, v.Id, temp)
+		} else {
+			temp = FindTreeChildNode(v.Children, id, temp)
 		}
 	}
 	return temp
@@ -64,6 +75,6 @@ func main() {
 	fmt.Print(out)
 	fmt.Println()
 	var temp []int
-	nodes := FindTreeChildNode(menu, 2, temp)
+	nodes := FindTreeChildNode(out, 4, temp)
 	fmt.Println(nodes)
 }
