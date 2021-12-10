@@ -4,7 +4,9 @@
  */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //思路,先把顶级找出,在找子
 
@@ -33,6 +35,19 @@ func GetMenu(menu []Menu, pid int) []Menu {
 	return out
 }
 
+//查询自己 和其子节点 所有id  一般用于删除
+func FindTreeChildNode(arr []Menu, id int, temp []int) []int {
+	for _, v := range arr {
+		if v.Pid == id {
+			temp = append(temp, v.Id)
+			temp = FindTreeChildNode(arr, v.Id, temp)
+		} else if v.Id == id && v.Pid == 0 {
+			temp = append(temp, v.Id)
+		}
+	}
+	return temp
+}
+
 func main() {
 	menu := []Menu{
 		{Id: 1, Pid: 2, Name: "可爱"},
@@ -47,4 +62,8 @@ func main() {
 	}
 	out := GetMenu(menu, 0)
 	fmt.Print(out)
+	fmt.Println()
+	var temp []int
+	nodes := FindTreeChildNode(menu, 2, temp)
+	fmt.Println(nodes)
 }
