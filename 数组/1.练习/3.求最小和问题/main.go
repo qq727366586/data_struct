@@ -17,7 +17,7 @@ func merge(arr []int, l, m, r int) int {
 	t1 := l
 	t2 := m + 1
 	for t1 <= m && t2 <= r {
-		if arr[t1] <= arr[t2] {
+		if arr[t1] < arr[t2] {
 			//计算有多少个比他小的
 			res += arr[t1] * (r - t2 + 1)
 			temp[i] = arr[t1]
@@ -47,7 +47,7 @@ func merge(arr []int, l, m, r int) int {
 }
 
 func main() {
-	var arr = []int{1,3,4,66,5,2,11}
+	var arr = []int{1,3,44,4,4,66,5,5,2,5,2,2,11}
 	out := process(arr, 0, len(arr) - 1)
 	fmt.Println(out)
 }
