@@ -42,7 +42,6 @@ func Merge(arr []int, l, mid, r int) {
 	for k, v := range temp {
 		arr[k + l] = v
 	}
-	fmt.Println(arr)
 }
 
 func main() {

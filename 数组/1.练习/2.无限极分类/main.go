@@ -4,7 +4,9 @@
  */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //思路,先把顶级找出,在找子
 
@@ -14,6 +16,7 @@ type Menu struct {
 	Name     string
 	Children []Menu
 }
+
 
 func GetMenu(menu []Menu, pid int) []Menu {
 	var out []Menu
@@ -32,6 +35,19 @@ func GetMenu(menu []Menu, pid int) []Menu {
 	return out
 }
 
+//根据无限极分类 某个节点 查找出  自己 + 所有子节点
+func FindTreeChildNode(arr []Menu, id int, temp []int) []int {
+	for _, v := range arr {
+		if v.Id == id || v.Pid == id  {
+			temp = append(temp, v.Id)
+			temp = FindTreeChildNode(v.Children, v.Id, temp)
+		} else {
+			temp = FindTreeChildNode(v.Children, id, temp)
+		}
+	}
+	return temp
+}
+
 func main() {
 	menu := []Menu{
 		{Id: 1, Pid: 2, Name: "可爱"},
@@ -46,4 +62,10 @@ func main() {
 	}
 	out := GetMenu(menu, 0)
 	fmt.Print(out)
+	fmt.Println()
+	var temp []int
+	nodes := FindTreeChildNode(menu, 1, temp)
+	fmt.Println(nodes)
+	//nodes := FindTreeChildNode(out, 4, temp)
+	//fmt.Println(nodes)
 }

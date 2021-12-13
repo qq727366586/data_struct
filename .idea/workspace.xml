@@ -21,12 +21,18 @@
   <component name="ChangeListManager">
     <list default="true" id="9eb9cef3-476f-4da8-b56f-64e8a40da0ae" name="Default Changelist" comment="">
 <<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/数组/1.练习/3.求最小和问题/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数组/1.练习/2.无限极分类/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/数组/1.练习/2.无限极分类/main.go" afterDir="false" />
+=======
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/数组/选择排序/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/数组/选择排序/main.go" afterDir="false" />
 =======
       <change afterPath="$PROJECT_DIR$/数组/归并排序/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 >>>>>>> 1dd71e9b8eaa12cd887ad466b632a2908ae44f65
+>>>>>>> f866370372d2ef5d32e4cf2b2623b8788cfd265b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +79,7 @@
       <recent name="E:\go\src\data_struct\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build data_struct/数组/找出数组最大值">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build data_struct/数组/找出数组最大值" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="data_struct" />
       <working_directory value="$PROJECT_DIR$" />
@@ -92,8 +98,18 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="data_struct" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/数组/1.练习/2.无限极分类/main.go" />
+      <package value="data_struct" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build data_struct/数组/找出数组最大值" />
         <item itemvalue="Go Build.go build data_struct/list" />
       </list>
@@ -113,6 +129,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -122,9 +139,56 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="450" key="#GOROOT/0.0.1920.1040@0.0.1920.1040" timestamp="1638185028475" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1638757877855">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1638757877855" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1638269866965">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1638269866965" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1638269866965">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1638269866965" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1638269866965">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1638269866965" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1638269866965">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1638269866965" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1638269867250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1638269867250" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1638269867250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1638269867250" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1638269867250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1638269867250" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1638269867250">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1638269867250" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1638185024102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1638185024102" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/数组/1.练习/2.无限极分类/main.go</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
