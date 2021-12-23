@@ -17,7 +17,7 @@ func quickSort(arr []int, left, right int){
 		fmt.Println(arr)
 		//分区
 		l, r := Partition2(arr, left, right)
-		quickSort(arr, left, l - 1)
+		quickSort(arr, left, l)
 		quickSort(arr, r + 1, right)
 	}
 
@@ -59,12 +59,12 @@ func Partition2(arr []int, left, right int) (int, int) {
 			left++
 		}
 	}
-	fmt.Println(arr)
-	return point + 1, more - 1
+	arr[left], arr[right] = arr[right], arr[left]
+	return point, more
 }
 
 func main()  {
-	var arr = []int{1,2,4,4,6,5,7,8,10}
+	var arr = []int{12,21,1,1,1,1,1,1,2,2,3,4,4,5,6,6,7,4,4,6,5,7,8,10}
 	quickSort(arr, 0, len(arr) -1 )
 	fmt.Println(arr)
 }
