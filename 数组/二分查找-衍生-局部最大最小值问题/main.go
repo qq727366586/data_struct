@@ -8,7 +8,7 @@ import (
 	"fmt"
 )
 
-//在一个无序数组中,求峰值问题 也就是 局部最小值 和 局部最大值
+//局部最小值问题。数组无序，相邻元素不等
 //此题求一个 一个 局部最小值 返回下标
 func getPartMaxFromArr(arr []int) int {
 	l := 0
@@ -21,7 +21,7 @@ func getPartMaxFromArr(arr []int) int {
 	}
 	for l < r {
 		mid := l + (r - l) >> 1
-		if arr[mid] <= arr[mid + 1] {
+		if arr[mid] < arr[mid + 1] {
 			r = mid
 		} else {
 			l = mid + 1
@@ -34,6 +34,6 @@ func getPartMaxFromArr(arr []int) int {
 }
 
 func main()  {
-	out := getPartMaxFromArr([]int{110,110,110,110,110,110,110})
+	out := getPartMaxFromArr([]int{11,10,9,8,7,6,11})
 	fmt.Print(out)
 }

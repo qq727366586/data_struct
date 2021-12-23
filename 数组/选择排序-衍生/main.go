@@ -54,7 +54,7 @@ func main() {
 	fmt.Print(res)
 	fmt.Println()
 	fmt.Println("---------------------------------2.")
-	arr1 := []int{2,3,2,4,5,5,4,7,8,6,7,8,6,10}
+	arr1 := []int{2,3,2,4,5,5,4,7,8,6,7,8,6,101}
 	res1, res2 := index1(arr1)
 	fmt.Print(res1, res2)
 }
