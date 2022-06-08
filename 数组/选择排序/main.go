@@ -22,6 +22,18 @@ func index(arr []uint) {
 	list(arr)
 }
 
+func index1(arr []uint) {
+	for i := 0; i < len(arr); i++ {
+		index := i
+		for k := i + 1; k < len(arr); k++ {
+			if arr[k] < arr[index] {
+				index = k
+			}
+		}
+		swap(arr, i, index)
+	}
+}
+
 func swap(arr []uint, a, b int) {
 	temp := arr[a]
 	arr[a] = arr[b]
@@ -39,5 +51,6 @@ func list(arr []uint) {
 }
 func main() {
 	arr := []uint{2,3,4,5,3,4,12,534,53,2,412,16,7,8,86,4,42,4,5}
-	index(arr)
+	index1(arr)
+	list(arr)
 }

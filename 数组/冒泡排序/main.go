@@ -4,7 +4,9 @@
  */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func index(arr []uint) {
 	if len(arr) <= 1 {
@@ -18,6 +20,17 @@ func index(arr []uint) {
 		}
 	}
 	list(arr)
+}
+
+func index1(arr []uint) {
+	l := len(arr) - 1
+	for i := l; i > 0; i-- {
+		for k := 0; k < i; k++ {
+			if arr[k] > arr[k + 1] {
+				swap(arr, k , k + 1)
+			}
+		}
+	}
 }
 
 func swap(arr []uint, a, b int) {
@@ -34,4 +47,10 @@ func list(arr []uint) {
 			fmt.Print(fmt.Sprintf("%d,", v))
 		}
 	}
+}
+
+func main() {
+	arr := []uint{2,3,4,5,3,4,12,534,53,2,412,16,7,8,86,4,42,4,5}
+	index1(arr)
+	list(arr)
 }

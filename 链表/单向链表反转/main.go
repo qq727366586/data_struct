@@ -11,46 +11,26 @@ type Node struct {
 	next *Node
 }
 
-func (n *Node) Add(temp Node) *Node {
-	var node = n
-	for node.next != nil {
-		node = node.next
-	}
-	node.next = &temp
-	return n
+func (n *Node) Add(node *Node) {
+	n.next = node
 }
 
-func (n *Node) List() {
-	for n != nil {
-		fmt.Println(n.Value)
-		n = n.next
-	}
-}
-
-func (n *Node) reverse() *Node {
+func (n *Node) Reverse(head *Node) *Node {
 	var pre *Node
-	var node = n
-	for node != nil {
-		temp := node.next
-		node.next = pre
-		pre = node
-		node = temp
+	for head != nil {
+		next := head.next
+		head.next = pre
+		pre = head
+		head = next
 	}
 	return pre
 }
 
 func main() {
-	node := &Node{
-		Value: 1,
-		next: nil,
+	n := &Node{
+		1, nil,
 	}
-	node.Add(Node{Value: 2})
-	node.Add(Node{Value: 3})
-	node.Add(Node{Value: 4})
-	node.Add(Node{Value: 5})
-	node.Add(Node{Value: 6})
-	node.List()
-	node = node.reverse()
-
-	node.List()
+	n.Add(&Node{2, nil})
+	head := n.Reverse(n)
+	fmt.Println(head, head.next)
 }
