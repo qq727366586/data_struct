@@ -49,7 +49,7 @@ func findTwoOddNumber(arr []int) (int, int) {
 	return oneOfOdd, temp ^ oneOfOdd
 }
 
-// 一个数组中 有个数出现了k次 其他数出现了m次,  k < m && m > 1 求出现了K次的数
+// 一个数组中 有个数出现了k次 其他数出现了m次,  k < m && m > 1 求出现了K次的数.
 func findKNumber(arr []int, k, m int) int {
 	var tmp = [32]int{}
 	for _, v := range arr {
