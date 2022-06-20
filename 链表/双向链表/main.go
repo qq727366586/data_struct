@@ -6,131 +6,121 @@ package main
 
 import "fmt"
 
-type man struct {
-	no   int
-	name string
-	pre  *man
-	next *man
+type Node struct {
+	data int
+	pre  *Node
+	next *Node
+}
+type List struct {
+	head *Node
 }
 
-//插入
-func (m *man) insert(newMan *man) *man {
-	temp := m
-	if temp.next != nil {
-		temp = temp.next
+func NewList() *List {
+	return &List{}
+}
+
+// 无序插入
+func (l *List) Insert(node *Node) *List {
+	if l.head == nil {
+		l.head = node
+		return l
 	}
-	temp.next = newMan
-	newMan.pre = temp
-	return m
-}
-
-func (m *man) reverse(headMan *man) *man {
-	var pre *man
-	var next *man
-	for headMan != nil {
-		next = headMan.next
-		headMan.next = pre
-		headMan.pre = next
-		pre = headMan
-		headMan = next
+	head := l.head
+	for head.next != nil {
+		head = head.next
 	}
-	return headMan
+	head.next = node
+	node.pre = head
+	return l
 }
 
-//有序插入
-func (m *man) insertSort(newMan *man) *man {
-	temp := m
-	for temp.next != nil {
-		if temp.next.no > newMan.no {
+// 有序插入
+func (l *List) InsertSort(node *Node) *List {
+	if l.head == nil {
+		l.head = node
+		return l
+	}
+	head := l.head
+	var pre *Node
+	for head != nil {
+		pre = head
+		if head.data >= node.data {
+			head.data, node.data = node.data, head.data
+			next := head.next
+			head.next = node
+			node.pre = head
+			node.next = next
+			if next != nil {
+				next.pre = node
+			}
 			break
 		}
-		if temp.next.no == newMan.no {
-			return m
+		head = head.next
+	}
+	pre.next = node
+	node.pre = pre
+	return l
+}
+
+func (l *List) Remove(key int) *List {
+	if l.head == nil {
+		return l
+	}
+	// 看是否第一个元素
+	if l.head.data == key {
+		tmp := l.head.next
+		l.head.next = nil
+		l.head = tmp
+	}
+	head := l.head
+	for head != nil && head.next != nil {
+		if head.next.data == key {
+			tmp := head.next.next
+			head.next.pre = nil
+			head.next.next = nil
+			head.next = tmp
+			if tmp != nil {
+				head.next.pre = head
+			}
+			break
 		}
-		temp = temp.next
+		head = head.next
 	}
-	newMan.next = temp.next
-	temp.next = newMan
-	newMan.pre = temp
-	if newMan.next != nil {
-		newMan.next.pre = newMan
-	}
-	return m
+	return l
 }
 
-//删除
-func (m *man) delete(no int) *man {
-	temp := m
-	boolean := false
-	for temp.next != nil {
-		 if temp.next.no == no {
-			 boolean = true
-			 break
-		 }
-		 temp = temp.next
-	}
-	if boolean {
-		temp.next = temp.next.next
-
-		if temp.next != nil {
-			temp.next.pre = temp
+// 正向遍历
+func (l *List) ForwardPrint() {
+	node := l.head
+	for node != nil {
+		if node.next != nil {
+			fmt.Print(node.data, ",")
+		} else {
+			fmt.Print(node.data)
 		}
+		node = node.next
 	}
-	return m
 }
 
-func (m *man) list() {
-	//先正后反遍历
-	temp := m
-	if temp.next == nil {
-		return
+// 反向遍历
+func (l *List) ReversePrint() {
+	node := l.head
+	for node.next != nil {
+		node = node.next
 	}
-	for temp.next != nil {
-		fmt.Printf(temp.name + ", ")
-		temp = temp.next
+	for node != nil {
+		if node.pre != nil {
+			fmt.Print(node.data, ",")
+		} else {
+			fmt.Print(node.data)
+		}
+		node = node.pre
 	}
-	fmt.Printf(temp.name + ", ")
-	fmt.Println()
-	for temp.pre != nil {
-		fmt.Printf(temp.name + ", ")
-		temp = temp.pre
-	}
-	fmt.Printf(temp.name + ", ")
 }
-
 
 func main() {
-	root := &man{
-		no: 0,
-		name: "机器人头号",
-	}
-
-	root1 := &man{
-		no: 1,
-		name: "机器人1号",
-	}
-
-	root2 := &man{
-		no: 2,
-		name: "机器人2号",
-	}
-	root4 := &man{
-		no: 4,
-		name: "机器人4号",
-	}
-	root3 := &man{
-		no: 3,
-		name: "机器人3号",
-	}
-	root5 := &man{
-		no: 5,
-		name: "机器人5号",
-	}
-	root6 := &man{
-		no: 6,
-		name: "机器人6号",
-	}
-	root.insertSort(root1).insertSort(root6).insertSort(root2).insertSort(root5).insertSort(root4).insertSort(root3).insertSort(root4)
-	root.delete(1)
-	root.list()
+	list := NewList()
+	l := list.InsertSort(&Node{data: 1}).InsertSort(&Node{data: 11}).InsertSort(&Node{data: 1}).InsertSort(&Node{data: 111}).InsertSort(&Node{data: -1})
+	//l.Remove(1).Remove(111).Remove(-1).Remove(1).Remove(11).Remove(123123)
+	l.ForwardPrint()
 }

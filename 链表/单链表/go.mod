@@ -1,3 +1,3 @@
-module data_struct/链表/单链表
+module example
 
-go 1.15
+go 1.18
