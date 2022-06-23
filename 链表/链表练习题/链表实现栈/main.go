@@ -54,40 +54,54 @@ func (l *LinkedStack) Pop() (int, error) {
 	if l.end == nil {
 		return 0, errors.New("stack no data")
 	}
-	tmp := l.end
+	out := l.end.data
 	// 说明只有一个元素
 	if l.end.pre == nil {
 		l.head = nil
 		l.end = nil
-		return tmp.data, nil
+		return out, nil
 	}
 	l.end = l.end.pre
+	l.end.next.pre = nil
 	l.end.next = nil
-	tmp.pre = nil
-	return tmp.data, nil
+	return out, nil
 }
 
-func (l *LinkedStack) Top() int {
-	return l.end.data
+func (l *LinkedStack) Top() (int, error) {
+	if l.end != nil {
+		return l.end.data, nil
+	}
+	return 0, errors.New("stack no data")
 }
 
 func main() {
 	stack := &LinkedStack{}
 	stack.Push(1)
+	data, err := stack.Top()
+	fmt.Println(data, err, "top") // 1 nil
 
 	stack.Push(2)
+	data, err = stack.Top()
+	fmt.Println(data, err, "top") // 2 nil
 
 	num, err := stack.Pop()
-	fmt.Println(num, err)
+	fmt.Println(num, err) // 2 nil
+
+	data, err = stack.Top()
+	fmt.Println(data, err, "top") // 1 nil
 
 	num, err = stack.Pop()
+	fmt.Println(num, err) // 1 nil
+
+	data, err = stack.Top()
+	fmt.Println(data, err, "top") // 0 err
+
+	num, err = stack.Pop() // 0 err
 	fmt.Println(num, err)
 
-	num, err = stack.Pop()
-	fmt.Println(num, err)
 	stack.Push(2)
-	fmt.Println(stack.Size())
-	fmt.Println(stack.IsEmpty())
+	fmt.Println(stack.Size())    // 1
+	fmt.Println(stack.IsEmpty()) // false
 	num, err = stack.Pop()
 	fmt.Println(num, err)
 	fmt.Println(stack.Size())
