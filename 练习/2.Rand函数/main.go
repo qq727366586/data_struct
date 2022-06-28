@@ -20,13 +20,12 @@ func randNumber() {
 		}
 	}
 	fmt.Println(count)
-	fmt.Printf("%.2f" , float64(count / 10000))
+	fmt.Printf("%.2f", float64(count/10000))
 }
 
 func xToXPower2() float64 {
-
 	rand.Seed(time.Now().UnixNano())
-	return math.Max(float64(rand.Intn(10)), float64(rand.Intn(10) ))
+	return math.Max(float64(rand.Intn(10)), float64(rand.Intn(10)))
 }
 
 func main() {
