@@ -4,10 +4,7 @@
  */
 package main
 
-import (
-	"errors"
-	"fmt"
-)
+import "fmt"
 
 //定义结构体
 type Node struct {
@@ -35,75 +32,44 @@ func (l *LinkedStack) Size() int {
 	return count
 }
 
-func (l *LinkedStack) Push(data int) {
-	node := &Node{data: data}
+func (l *LinkedStack) Push(n *Node) *LinkedStack {
 	if l.head == nil {
-		l.head, l.end = node, node
-		return
+		l.head, l.end = n, n
+		return l
 	}
 	tmp := l.head
 	for tmp.next != nil {
 		tmp = tmp.next
 	}
-	tmp.next = node
-	node.pre = tmp
-	l.end = tmp.next
+	tmp.next = n
+	n.pre = tmp
+	l.end = n
+	return l
 }
 
-func (l *LinkedStack) Pop() (int, error) {
+func (l *LinkedStack) Pop() *Node {
 	if l.end == nil {
-		return 0, errors.New("stack no data")
+		return l.end
 	}
-	out := l.end.data
-	// 说明只有一个元素
-	if l.end.pre == nil {
-		l.head = nil
-		l.end = nil
-		return out, nil
-	}
+	tmp := l.end
 	l.end = l.end.pre
-	l.end.next.pre = nil
-	l.end.next = nil
-	return out, nil
+	if l.end != nil {
+		l.end.next.pre = nil
+		l.end.next = nil
+	} else {
+		l.head = l.end
+	}
+	return tmp
 }
 
-func (l *LinkedStack) Top() (int, error) {
-	if l.end != nil {
-		return l.end.data, nil
-	}
-	return 0, errors.New("stack no data")
+func (l *LinkedStack) Top() *Node {
+	return l.end
 }
 
 func main() {
 	stack := &LinkedStack{}
-	stack.Push(1)
-	data, err := stack.Top()
-	fmt.Println(data, err, "top") // 1 nil
-
-	stack.Push(2)
-	data, err = stack.Top()
-	fmt.Println(data, err, "top") // 2 nil
-
-	num, err := stack.Pop()
-	fmt.Println(num, err) // 2 nil
-
-	data, err = stack.Top()
-	fmt.Println(data, err, "top") // 1 nil
-
-	num, err = stack.Pop()
-	fmt.Println(num, err) // 1 nil
-
-	data, err = stack.Top()
-	fmt.Println(data, err, "top") // 0 err
-
-	num, err = stack.Pop() // 0 err
-	fmt.Println(num, err)
-
-	stack.Push(2)
-	fmt.Println(stack.Size())    // 1
-	fmt.Println(stack.IsEmpty()) // false
-	num, err = stack.Pop()
-	fmt.Println(num, err)
-	fmt.Println(stack.Size())
-	fmt.Println(stack.IsEmpty())
+	stack.Push(&Node{data: 1}).Push(&Node{data: 11}).Push(&Node{data: 1}).Push(&Node{data: 111})
+	fmt.Println("size ", stack.Size(), "isEmpty ", stack.IsEmpty())
+	fmt.Println("pop ", stack.Pop(), "pop ", stack.Pop(), "pop ", stack.Pop(), "pop ", stack.Pop(), "pop ", stack.Pop())
+	fmt.Println("size ", stack.Size(), "isEmpty ", stack.IsEmpty())
 }
